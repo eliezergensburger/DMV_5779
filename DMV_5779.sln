@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS", "DS\DS.csproj", "{E366
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolsExtentions", "whatchamacallit\ToolsExtentions.csproj", "{65BBDBE6-CB2B-4C38-9118-B6772282C941}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolsTests", "whatchamacallitTests\ToolsTests.csproj", "{0AA39604-AC23-44EE-83E6-1375EBFE66E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{65BBDBE6-CB2B-4C38-9118-B6772282C941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65BBDBE6-CB2B-4C38-9118-B6772282C941}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65BBDBE6-CB2B-4C38-9118-B6772282C941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AA39604-AC23-44EE-83E6-1375EBFE66E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA39604-AC23-44EE-83E6-1375EBFE66E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA39604-AC23-44EE-83E6-1375EBFE66E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA39604-AC23-44EE-83E6-1375EBFE66E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
