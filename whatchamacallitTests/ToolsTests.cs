@@ -17,7 +17,7 @@ namespace Tools.Tests
             City = "Jerusalem",
             Number = 21,
             StreetName = "havvad haleumi",
-            ZipCode = 91160
+            //         ZipCode = 91160
         };
         [TestMethod()]
         public void CloneTest()
@@ -41,7 +41,7 @@ namespace Tools.Tests
                     City = "Jerusalem",
                     Number = 21,
                     StreetName = "havvad haleumi",
-                    ZipCode = 91160
+                    //                  ZipCode = 91160
                 },
                 DayOfBirth = DateTime.Now.AddYears(-20),
                 Gender = Gender.MALE
@@ -53,5 +53,38 @@ namespace Tools.Tests
             Console.WriteLine(p2);
             Assert.AreNotEqual(address, p2);
         }
-    }
+        [TestMethod()]
+        public void TesterTestToString()
+        {
+            Tester tester = new Tester
+            {
+                ID = "12345",
+                Name = new Name { FirstName = "jojo", LastName = "chalass" },
+                Address = new Address
+                {
+                    City = "Jerusalem",
+                    Number = 21,
+                    StreetName = "havvad haleumi",
+                    //                  ZipCode = 91160
+                },
+                DayOfBirth = DateTime.Now.AddYears(-20),
+                Gender = Gender.MALE,
+                Experience = 10,
+                Expertise = CarType.Truck_Heavy,
+                MaxDistance = 2,
+                MaxTestWeekly = 1,
+                Schedule = new bool[5, 6]
+                     {
+                        { false, false, true, false, false, false},
+                        { false, false, false, false, false, false},
+                        { false, false, false, false, false, false},
+                        { false, false, true, false, false, false},
+                        { false, false, false, false, false, false}
+                      }
+            };
+            string printed = tester.ToString();
+            Console.WriteLine(tester);
+            Assert.AreEqual(printed, "hyugyuyg");
+        }
+    };
 }

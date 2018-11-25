@@ -40,7 +40,7 @@ namespace BE
             result.Schedule = new bool[5,6];
             for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) 
                 {
                     result.Schedule[i, j] = this.Schedule[i, j];
                 }

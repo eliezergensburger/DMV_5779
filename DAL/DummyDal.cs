@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
-using Tools;
 
 namespace DAL
 {
-    internal class Dal_imp : Idal
+    class DummyDal : Idal
     {
         public bool AddDrivingTest(DrivingTest drivingTest)
         {
@@ -18,15 +17,7 @@ namespace DAL
 
         public bool AddTester(Tester tester)
         {
-            foreach (Tester item in DS.DataSource.TestersList)
-            {
-                if(item.ID == tester.ID)
-                {
-                    throw new Exception("Tester already exist");
-                    return false;
-                }
-            }
-            DS.DataSource.TestersList.Add(tester.Clone());
+            //  DS.DataSource.TestersList.Add(tester.Clone());
             return true;
         }
 

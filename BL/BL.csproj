@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE58A76F-1696-4B03-AC86-81056B6879D3}</ProjectGuid>
+    <ProjectGuid>{DFA33432-0840-49DA-941F-9AACA2FCDD2C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DAL</RootNamespace>
-    <AssemblyName>DAL</AssemblyName>
+    <RootNamespace>BL</RootNamespace>
+    <AssemblyName>BL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,10 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dal_imp.cs" />
-    <Compile Include="DummyDal.cs" />
-    <Compile Include="FactorySingletonDal.cs" />
-    <Compile Include="Idal.cs" />
+    <Compile Include="Dept_BL.cs" />
+    <Compile Include="FactorySingletonBL.cs" />
+    <Compile Include="IBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,9 +50,9 @@
       <Project>{cf0a7303-fa2f-4b42-95e4-adc078e33749}</Project>
       <Name>BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DS\DS.csproj">
-      <Project>{e366b4dc-02ab-44d9-a4ad-cc7d9fcae0a5}</Project>
-      <Name>DS</Name>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{fe58a76f-1696-4b03-ac86-81056b6879d3}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\whatchamacallit\ToolsExtentions.csproj">
       <Project>{65bbdbe6-cb2b-4c38-9118-b6772282c941}</Project>
