@@ -86,5 +86,22 @@ namespace Tools.Tests
             Console.WriteLine(tester);
             Assert.AreEqual(printed, "hyugyuyg");
         }
+        [TestMethod()]
+        public void Testshedule()
+        {
+            Schedule stam = new Schedule();
+            stam.data = new bool[5, 6]
+            {
+                    { false, false, true, false, false, false},
+                        { true, false, false, false, false, false},
+                        { false, false, false, false, false, false},
+                        { false, false, true, false, false, false},
+                        { false, false, false, false, false, false}
+
+            };
+            Console.WriteLine(stam);
+            Assert.Fail();
+        }
+
     };
 }

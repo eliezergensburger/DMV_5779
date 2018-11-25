@@ -11,6 +11,12 @@ namespace PL_Console
     {
         static void Main(string[] args)
         {
+            AddTester();
+            Console.ReadKey();
+        }
+
+        private static void AddTester()
+        {
             Tester tester = new Tester
             {
                 ID = "12345",
@@ -37,14 +43,13 @@ namespace PL_Console
             };
             try
             {
-                BL.IBL mofa =BL.FactorySingletonBL.getInstance();
+                BL.IBL mofa = BL.FactorySingletonBL.getInstance();
                 mofa.AddTester(tester);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-           }
-            Console.ReadKey();
+            }
         }
     }
 }

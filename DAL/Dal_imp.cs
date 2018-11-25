@@ -8,7 +8,7 @@ using Tools;
 
 namespace DAL
 {
-    public class Dal_imp : Idal
+    internal class Dal_imp : Idal
     {
         public bool AddDrivingTest(DrivingTest drivingTest)
         {
@@ -18,7 +18,15 @@ namespace DAL
 
         public bool AddTester(Tester tester)
         {
-          //  DS.DataSource.TestersList.Add(tester.Clone());
+            foreach (Tester item in DS.DataSource.TestersList)
+            {
+                if(item.ID == tester.ID)
+                {
+                    throw new Exception("Tester already exist");
+                    return false;
+                }
+            }
+            DS.DataSource.TestersList.Add(tester.Clone());
             return true;
         }
 
