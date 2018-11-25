@@ -20,7 +20,7 @@ namespace BE
             return this.ToStringProperty();
         }
 
-        public virtual Person Clone()
+        public virtual Person Clone()  //amok 
         {
             return new Person
             {
@@ -29,8 +29,8 @@ namespace BE
                 {
                     City = this.Address.City,
                     Number = this.Address.Number,
-                    StreetName = this.Address.StreetName,
-                    ZipCode = this.Address.ZipCode
+                    StreetName = this.Address.StreetName//,
+                    //ZipCode = this.Address.ZipCode
                 },
                 DayOfBirth = this.DayOfBirth,
                 Gender = this.Gender,

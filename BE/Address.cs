@@ -11,7 +11,7 @@ namespace BE
         public String StreetName { get; set; }
         public int Number { get; set; }
         public String City { get; set; }
-        public int ZipCode { get; set; }
+        //public int ZipCode { get; set; }
 
         public override string ToString()
         {

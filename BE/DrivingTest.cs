@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace BE
     {
         private DateTime _date;
         private List<string> _requirements = new List<string>();
-
+        //  private ArrayList _requirements = new ArrayList();
         /// <summary>
         /// get set the Trainee ID
         /// </summary>
@@ -30,6 +31,22 @@ namespace BE
         public List<String> Requirements { get => _requirements; set => _requirements = value; }
         public bool Success { get; set; }
         public String Comment { get; set; }
+
+        public virtual DrivingTest Clone()  //amok 
+        {
+            return new DrivingTest
+            {
+                Tester_ID = this.Tester_ID,
+                Trainee_ID = this.Trainee_ID,
+                Date = this.Date,
+                Comment = this.Comment,
+                Requirements = this.Requirements.ToList(),
+                StartingPoint = this.StartingPoint.Clone(),
+                Success = this.Success,
+                Time = this.Time
+            };
+        }
+
 
         public override string ToString()
         {
