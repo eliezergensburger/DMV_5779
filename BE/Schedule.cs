@@ -28,16 +28,30 @@ namespace BE
         public override string ToString()
         {
             int starttime = 9;
+            bool oved = false;
             string result = null;
+            string hayom = null;
             for (int i = 0; i < 5; i++)
             {
-                result += ((Day)i).ToString() + "\n";
+                oved = false;
+                hayom = null;
+                //result += ((Day)i).ToString() + "\n";
                 for (int j = 0; j < 6; j++)
                 {
-                    result += (data[i, j] == true) ? ("\t" + (starttime + i) + ":00-" + (starttime + i + 1).ToString() + ":00\n") : "";
+                    if(data[i, j] == true)
+                    {
+                        oved = true;
+                        hayom += "\t" + (starttime + j) + ":00-";
+                        hayom += (starttime + j + 1).ToString() + ":00\n";
+                    }  
+                }
+                if (oved==true)
+                {
+                    result += ((Day)i).ToString() + "\n";
+                    result += hayom;
                 }
             }
-            return result;
+            return result.Substring(0,result.Length-1);
         }
     }
 }

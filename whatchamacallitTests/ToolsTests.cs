@@ -99,7 +99,7 @@ namespace Tools.Tests
                     { false, false, false, false, false, false}
             };
             Console.WriteLine(stam);
-            Assert.Fail();
+            Assert.IsTrue(stam != null);
         }
 
     };
