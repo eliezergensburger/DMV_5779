@@ -23,7 +23,7 @@ namespace DAL
                 if(item.ID == tester.ID)
                 {
                     throw new Exception("Tester already exist");
-                    return false;
+                 //   return false;
                 }
             }
             DS.DataSource.TestersList.Add(tester.Clone());

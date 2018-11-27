@@ -20,7 +20,7 @@ namespace BE
             return this.ToStringProperty();
         }
 
-        public virtual Person Clone()  //amok 
+        public virtual Person Clone()  //deep clone 
         {
             return new Person
             {

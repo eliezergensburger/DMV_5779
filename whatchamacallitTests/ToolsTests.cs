@@ -73,14 +73,14 @@ namespace Tools.Tests
                 Expertise = CarType.Truck_Heavy,
                 MaxDistance = 2,
                 MaxTestWeekly = 1,
-                Schedule = new bool[5, 6]
+                Luz = new Schedule(new bool[5, 6]
                      {
                         { false, false, true, false, false, false},
                         { false, false, false, false, false, false},
                         { false, false, false, false, false, false},
                         { false, false, true, false, false, false},
                         { false, false, false, false, false, false}
-                      }
+                      })
             };
             string printed = tester.ToString();
             Console.WriteLine(tester);
@@ -93,11 +93,10 @@ namespace Tools.Tests
             stam.data = new bool[5, 6]
             {
                     { false, false, true, false, false, false},
-                        { true, false, false, false, false, false},
-                        { false, false, false, false, false, false},
-                        { false, false, true, false, false, false},
-                        { false, false, false, false, false, false}
-
+                    { true, false, false, false, false, false},
+                    { false, false, false, false, false, false},
+                    { true, false, true, true, false, false},
+                    { false, false, false, false, false, false}
             };
             Console.WriteLine(stam);
             Assert.Fail();
