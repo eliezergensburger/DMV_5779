@@ -38,8 +38,21 @@ namespace BL
       public  bool UpdateDrivingTest(DrivingTest drivingTest){ return true; }
 
       public  List<Tester> GetTesters(){ return null; }
-      public  List<Trainee> GetTrainees(){ return null; }
+      public  List<Trainee> GetTrainees()
+      { 
+       try
+            {
+                DAL.FactorySingletonDal.getInstance().GetTrainees(SelectGoodtrainee);
+            }
+            catch (Exception exception )
+            {
+                throw exception;
+            }
+      }
       public  List<DrivingTest> GetDrivingTests(){ return null; }
-
+      private bool SelectGoodtrainee(Trainee t)
+      {
+            return (t.Gender==Gender.MALE);
+      }
     }
 }
