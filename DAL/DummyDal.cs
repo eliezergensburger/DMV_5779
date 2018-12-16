@@ -36,7 +36,7 @@ namespace DAL
             return DS.DataSource.TestersList.ToList();
         }
 
-        public List<Trainee> GetTrainees(Predicate<Trainee> p= null)
+        public List<Trainee> GetTrainees(Predicate<Trainee> p = null)
         {
             throw new NotImplementedException();
         }

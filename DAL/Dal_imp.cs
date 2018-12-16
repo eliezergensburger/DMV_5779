@@ -42,12 +42,29 @@ namespace DAL
 
         public List<Tester> GetTesters()
         {
-            return DS.DataSource.TestersList.ToList();
+            // return
+            //(from item in DS.DataSource.TestersList
+            // select item.Clone()
+            //).ToList();
+                      
+            return DS.DataSource.TestersList.Select(item => item.Clone()).ToList();
         }
 
-        public List<Trainee> GetTrainees()
+        public List<Trainee> GetTrainees(Predicate<Trainee> p =null)
         {
-            throw new NotImplementedException();
+            IEnumerable<Trainee> result = null;
+            if(p !=null)
+            {
+                result = from t in DS.DataSource.TraineesList
+                         where (p(t))
+                        select t;
+            }
+            else
+            {
+            result = from t in DS.DataSource.TraineesList
+                        select t;
+            }
+            return result.ToList();
         }
 
         public bool RemoveDrivingTest(DrivingTest drivingTest)
