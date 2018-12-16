@@ -42,7 +42,12 @@ namespace DAL
 
         public List<Tester> GetTesters()
         {
-            return DS.DataSource.TestersList.ToList();
+            // return
+            //(from item in DS.DataSource.TestersList
+            // select item.Clone()
+            //).ToList();
+                      
+            return DS.DataSource.TestersList.Select(item => item.Clone()).ToList();
         }
 
         public List<Trainee> GetTrainees(Predicate<Trainee> p =null)
