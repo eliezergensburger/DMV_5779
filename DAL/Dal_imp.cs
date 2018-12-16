@@ -50,7 +50,8 @@ namespace DAL
             return DS.DataSource.TestersList.Select(item => item.Clone()).ToList();
         }
 
-        public List<Trainee> GetTrainees(Predicate<Trainee> p =null)
+        public List<Trainee> GetTrainees(Func<Trainee,bool> p = null)
+        //public List<Trainee> GetTrainees(Predicate<Trainee> p =null)
         {
             IEnumerable<Trainee> result = null;
             if(p !=null)

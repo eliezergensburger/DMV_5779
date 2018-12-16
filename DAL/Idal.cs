@@ -22,7 +22,7 @@ namespace DAL
         bool UpdateDrivingTest(DrivingTest drivingTest);
 
         List<Tester> GetTesters();
-        List<Trainee> GetTrainees(Predicate<Trainee> p);
+        List<Trainee> GetTrainees(Func<Trainee,bool> p);
         List<DrivingTest> GetDrivingTests();
     }
 }
