@@ -41,6 +41,11 @@ namespace DAL
             throw new NotImplementedException();
         }
 
+        public List<Trainee> GetTrainees(Func<Trainee, bool> p)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool RemoveDrivingTest(DrivingTest drivingTest)
         {
             throw new NotImplementedException();

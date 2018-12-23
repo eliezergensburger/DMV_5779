@@ -20,6 +20,7 @@ namespace BL
         List<DrivingTest> GetDrivingTests();
         List<Tester> GetTesters();
         List<Trainee> GetTrainees();
+        IEnumerable<Person> GetAllPersons();
 
 
     }

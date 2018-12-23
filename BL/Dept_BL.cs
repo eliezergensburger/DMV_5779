@@ -39,7 +39,10 @@ namespace BL
         public bool RemoveDrivingTest(DrivingTest drivingTest) { return true; }
         public bool UpdateDrivingTest(DrivingTest drivingTest) { return true; }
 
-        public List<Tester> GetTesters() { return null; }
+        public List<Tester> GetTesters()
+        {
+            return instance.GetTesters();
+        }
         public List<Trainee> GetTrainees() //Male only
         {
             try
@@ -52,6 +55,22 @@ namespace BL
             }
         }
         public List<DrivingTest> GetDrivingTests() { return null; }
+
+        public IEnumerable<Person> GetAllPersons()
+        {
+            IEnumerable<Person> result = (from p in instance.GetTrainees(null)
+                                          select p);
+            result.Union(from p in instance.GetTesters()
+                          select p);
+            return result;
+
+            //List<Person> list = new List<Person>();
+
+            //list.AddRange(GetTrainees());
+            //list.AddRange(GetTesters());
+
+            //return list;
+        }
         // private bool SelectMaleTrainee(Trainee t)
         // {
         //       return (t.Gender==Gender.MALE);

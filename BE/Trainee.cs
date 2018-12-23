@@ -20,5 +20,23 @@ namespace BE
             return this.ToStringProperty();
         }
 
+        public new Trainee Clone()
+        {
+            Trainee result = new Trainee
+            {
+                Address = this.Address.Clone(),
+                DayOfBirth = this.DayOfBirth,
+                Gender = this.Gender,
+                ID = this.ID,
+                Name = this.Name,
+                CarTrained = this.CarTrained,
+                DrivingSchool = this.DrivingSchool,
+                GearType = this.GearType,
+                Instructor = this.Instructor,
+                LessonsNb = this.LessonsNb // new balance running shoes
+            };
+            return result;
+        }
+
     }
 }
