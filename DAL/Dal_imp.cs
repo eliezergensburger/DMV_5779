@@ -10,6 +10,10 @@ namespace DAL
 {
     internal class Dal_imp : Idal
     {
+        public Dal_imp()
+        {
+            DS.DataSource.init();
+        }
         public bool AddDrivingTest(DrivingTest drivingTest)
         {
             DS.DataSource.DrivingtestsList.Add(drivingTest.Clone());
@@ -49,21 +53,22 @@ namespace DAL
                       
             return DS.DataSource.TestersList.Select(item => item.Clone()).ToList();
         }
-
+        // do not use Predicate<T> with Linq, instead use Func<T,bool>
+        // public List<Trainee> GetTrainees(Predicate<Trainee> p =null) 
         public List<Trainee> GetTrainees(Func<Trainee,bool> p = null)
-        //public List<Trainee> GetTrainees(Predicate<Trainee> p =null)
         {
             IEnumerable<Trainee> result = null;
+           
             if(p !=null)
             {
                 result = from t in DS.DataSource.TraineesList
                          where (p(t))
-                        select t;
+                        select t.Clone();
             }
             else
             {
             result = from t in DS.DataSource.TraineesList
-                        select t;
+                        select t.Clone();
             }
             return result.ToList();
         }

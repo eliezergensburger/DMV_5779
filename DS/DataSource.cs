@@ -42,6 +42,46 @@ namespace DS
                       })
             });
 
+            TraineesList.Add(new Trainee
+            {
+                ID = "9999",
+                Name = new Name { FirstName = "eran", LastName = "zehuze" },
+                Address = new Address
+                {
+                    City = "TLv",
+                    Number = 21,
+                    StreetName = "Jerusalem Bld",
+                    //                  ZipCode = 91160
+                },
+                DayOfBirth = DateTime.Now.AddYears(-21),
+                Gender = Gender.MALE,
+                CarTrained = CarType.TwoWheels,
+                DrivingSchool = "Machon Bli Lev",
+                GearType = GearType.Manual,
+                Instructor =  new Name { FirstName = "Martze", LastName = "bemivne netunim" },
+                LessonsNb = 134
+            }
+            );
+            TraineesList.Add(new Trainee
+            {
+                ID = "99910",
+                Name = new Name { FirstName = "Emanuel", LastName = "Macron" },
+                Address = new Address
+                {
+                    City = "Haifa",
+                    Number = 100,
+                    StreetName = "Hell Av.",
+                    //                  ZipCode = 91160
+                },
+                DayOfBirth = DateTime.Now.AddYears(-24),
+                Gender = Gender.MALE,
+                CarTrained = CarType.Private,
+                DrivingSchool = "Machon Bli Kishkes",
+                GearType = GearType.Manual,
+                Instructor = new Name { FirstName = "Super", LastName = "lo Kayam" },
+                LessonsNb = 12
+            }
+            );
         }
         public static List<DrivingTest> DrivingtestsList
         {

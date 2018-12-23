@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="Tatte" Content="מי יודע" HorizontalAlignment="Left" Margin="83,73,0,0" VerticalAlignment="Top" Width="144" Height="111" Click="Tatte_Click"/>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="362" Margin="273,27,0,0" VerticalAlignment="Top" Width="470" />
     </Grid>
 </Window>

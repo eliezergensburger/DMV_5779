@@ -58,11 +58,11 @@ namespace BL
 
         public IEnumerable<Person> GetAllPersons()
         {
-            IEnumerable<Person> result = (from p in instance.GetTrainees(null)
+            IEnumerable<Person> result1 = (from p in instance.GetTrainees(null)
                                           select p);
-            result.Union(from p in instance.GetTesters()
-                          select p);
-            return result;
+            IEnumerable<Person> result2 =(from p in instance.GetTesters()
+                                 select p);
+            return result1.Concat(result2);
 
             //List<Person> list = new List<Person>();
 

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using BE;
+using BL;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,17 @@ namespace PL_WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        IBL myBl; 
         public MainWindow()
         {
             InitializeComponent();
+            myBl = BL.FactorySingletonBL.getInstance();
+          
+        }
+
+        private void Tatte_Click(object sender, RoutedEventArgs e)
+        {
+             datagrid.ItemsSource = new ObservableCollection<Person>(myBl.GetAllPersons());
         }
     }
 }
