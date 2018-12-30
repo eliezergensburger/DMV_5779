@@ -32,22 +32,7 @@ namespace BE
         public bool Success { get; set; }
         public String Comment { get; set; }
 
-        public virtual DrivingTest Clone()  //amok 
-        {
-            return new DrivingTest
-            {
-                Tester_ID = this.Tester_ID,
-                Trainee_ID = this.Trainee_ID,
-                Date = this.Date,
-                Comment = this.Comment,
-                Requirements = this.Requirements.ToList(),
-                StartingPoint = this.StartingPoint.Clone(),
-                Success = this.Success,
-                Time = this.Time
-            };
-        }
-
-
+      
         public override string ToString()
         {
             return this.ToStringProperty();

@@ -7,7 +7,7 @@ using Tools;
 
 namespace BE
 {
-    public class Person
+    public abstract class Person
     {
         public String ID { get; set; }
         public Name Name { get; set; }
@@ -18,24 +18,6 @@ namespace BE
         public override string ToString()
         {
             return this.ToStringProperty();
-        }
-
-        public virtual Person Clone()  //deep clone 
-        {
-            return new Person
-            {
-                ID = this.ID,
-                Address = new Address
-                {
-                    City = this.Address.City,
-                    Number = this.Address.Number,
-                    StreetName = this.Address.StreetName//,
-                    //ZipCode = this.Address.ZipCode
-                },
-                DayOfBirth = this.DayOfBirth,
-                Gender = this.Gender,
-                Name = this.Name
-            };
         }
 
     }
