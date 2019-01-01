@@ -5,64 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using BE;
 
 namespace DAL
 {
     internal class Dal_XML : Idal
     {
-        XElement traineeRoot;
-        XElement testerRoot;
-        XElement drivingtestRoot;
-
-        string traineePath = @"TraineeXml.xml";
-        string testerPath = @"TesterXml.xml";
-        string drivingtestPath = @"DrivingtestXml.xml";
-
-        public Dal_XML()
-        {
-            if (!File.Exists(traineePath) || !File.Exists(testerPath) || !File.Exists(drivingtestPath))
-                CreateFiles();
-            else
-                LoadData();
-        }
-
-        private void CreateFiles()
-        {
-            traineeRoot = new XElement("trainees");
-            testerRoot = new XElement("testers");
-            drivingtestRoot = new XElement("drivingtests");
-
-            traineeRoot.Save(traineePath);
-            testerRoot.Save(testerPath);
-            drivingtestRoot.Save(drivingtestPath);
-
-        }
-
-        private void LoadData()
-        {
-            try
-            {
-                traineeRoot = XElement.Load(traineePath);
-                testerRoot = XElement.Load(testerPath);
-                drivingtestRoot = XElement.Load(drivingtestPath);
-            }
-            catch
-            {
-                throw new Exception("File upload problem");
-            }
-        }
+      
 
         public bool AddDrivingTest(DrivingTest drivingTest)
         {
-            LoadData();
-            drivingtestRoot.Add(drivingTest.ToXML());
+            DS.DataSourceXML.DrivingTests.Add(drivingTest.ToXML());
+            DS.DataSourceXML.SaveDrivingtests();
             return true;
         }
 
         public bool AddTester(Tester tester)
         {
-            throw new NotImplementedException();
+            string str = tester.ToXMLstring();
+            XElement xml = XElement.Parse(str);
+            DS.DataSourceXML.Testers.Add(xml);
+            DS.DataSourceXML.SaveTesters();
+            return true;
         }
 
         public bool AddTrainee(Trainee trainee)
@@ -77,25 +42,15 @@ namespace DAL
 
         public List<Tester> GetTesters()
         {
-            var result = from t in testerRoot.Elements()
-                         select new Tester
-                         {
-                             ID = t.Element("ID").Value,
-                             Name = new Name
-                             {
-                                 FirstName = t.Element("Name").Element("FirtsName").Value,
-                                 LastName = t.Element("Name").Element("LastName").Value
-                             }
-                             //.....
+            var serializer = new XmlSerializer(typeof(Tester));
 
-                         };
-            return result.ToList();
-
+            var elements = DS.DataSourceXML.Testers.Elements("Tester");
+            return elements.Select(element => (Tester)serializer.Deserialize(element.CreateReader())).ToList();
         }
 
         public List<Trainee> GetTrainees(Func<Trainee, bool> p)
         {
-            var result = from t in traineeRoot.Elements()
+            var result = from t in DS.DataSourceXML.Trainees.Elements()
                          select new Trainee
                          {
                              ID = t.Element("ID").Value,

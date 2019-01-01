@@ -1,11 +1,13 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace DAL
 {
@@ -102,14 +104,16 @@ namespace DAL
             };
         }
 
-         public static XElement ToXML(this DrivingTest d)
+        public static XElement ToXML(this DrivingTest d)
         {
             return new XElement("drivingtest",
                                  new XElement("Tester_ID", d.Tester_ID.ToString()),
                                  new XElement("Trainee_ID", d.Trainee_ID.ToString()),
                                  new XElement("Date", d.Date.ToString()),
                                  new XElement("Comment", d.Comment.ToString()),
-                                 new XElement("Requirements", d.Requirements.ToString()),
+                                 new XElement("Requirements",
+                                                    (from r in d.Requirements
+                                                     select new XElement("Require", r)).ToList()),
                                  new XElement(d.StartingPoint.ToXML()),
                                  new XElement("Success", d.Success.ToString()),
                                  new XElement("Time", d.Time.ToString())
@@ -123,7 +127,7 @@ namespace DAL
                 Comment = d.Element("Comment").Value,
                 Trainee_ID = d.Element("Trainee_ID").Value,
                 Date = DateTime.Parse(d.Element("Date").Value),
-                Requirements = (from s in d.Element("Requirements").Elements("Requirement")
+                Requirements = (from s in d.Element("Requirements").Elements("Require")
                                 select s.Value).ToList(),
                 Success = Boolean.Parse(d.Element("Success").Value),
                 StartingPoint = d.Element("StartingPoint").ToAddress(),
@@ -159,8 +163,8 @@ namespace DAL
         //{
         //    return new XElement("Schedule",
         //        new XElement("Sunday", 
-                      
-               
+
+
         //}
 
         public static Tester Clone(this Tester t)
@@ -182,6 +186,8 @@ namespace DAL
             return result;
         }
 
+
+
         public static Trainee Clone(this Trainee t)
         {
             Trainee result = new Trainee
@@ -200,6 +206,31 @@ namespace DAL
             return result;
         }
 
-
+        public static void SaveToXml<T>(this T source, string fullfilename)
+        {
+            using (FileStream file = new FileStream(fullfilename, FileMode.Create))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(source.GetType());
+                xmlSerializer.Serialize(file, source);
+                file.Close();
+            }
+        }
+        public static string ToXMLstring<T>(this T toSerialize)
+        {
+            using (StringWriter textWriter = new StringWriter())
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                xmlSerializer.Serialize(textWriter, toSerialize);
+                return textWriter.ToString();
+            }
+        }
+        public static T ToObject<T>(this string toDeserialize)
+        {
+            using (StringReader textReader = new StringReader(toDeserialize))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+                return (T)xmlSerializer.Deserialize(textReader);
+            }
+        }
     }
 }
