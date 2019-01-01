@@ -32,12 +32,19 @@ namespace DAL
 
         public bool AddTrainee(Trainee trainee)
         {
-            throw new NotImplementedException();
+            string str = trainee.ToXMLstring();
+            XElement xml = XElement.Parse(str);
+            DS.DataSourceXML.Trainees.Add(xml);
+            DS.DataSourceXML.SaveTrainees();
+            return true;
         }
 
         public List<DrivingTest> GetDrivingTests()
         {
-            throw new NotImplementedException();
+            var serializer = new XmlSerializer(typeof(DrivingTest));
+
+            var elements = DS.DataSourceXML.Testers.Elements("DrivingTest");
+            return elements.Select(element => (DrivingTest)serializer.Deserialize(element.CreateReader())).ToList();
         }
 
         public List<Tester> GetTesters()
