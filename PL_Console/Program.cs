@@ -34,12 +34,17 @@ namespace PL_Console
                 Expertise = CarType.Truck_Heavy,
                 MaxDistance = 2,
                 MaxTestWeekly = 1,
-                Luz = new Schedule(new bool[5, 6] {
-                        { false, false, true, false, false, false},
-                        { false, false, false, false, false, false},
-                        { false, false, false, false, false, false},
-                        { false, false, true, false, false, false},
-                        { false, false, false, false, false, false} })
+                Luz = new Schedule
+                {
+                    Data = new bool[5][]
+                    {
+                        new bool[] { false, false, true, false, false, false },
+                        new bool[] { false, false, true, false, false, false },
+                        new bool[] { false, false, false, false, false, false },
+                        new bool[] { false, false, false, false, false, false },
+                        new bool[] { false, false, true, false, false, false },
+                     }
+                }
             };
             try
             {

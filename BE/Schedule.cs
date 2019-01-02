@@ -8,17 +8,7 @@ namespace BE
 {
     public class Schedule
     {
-        public bool[,] data = new bool[5, 6];
-
-        public Schedule()
-        {
-
-        }
-
-        public Schedule(bool[,] data)
-        {
-            this.data = data;
-        }
+        public bool[][] Data { get; set; } = new bool[5][];
 
         public override string ToString()
         {
@@ -33,20 +23,20 @@ namespace BE
                 //result += ((Day)i).ToString() + "\n";
                 for (int j = 0; j < 6; j++)
                 {
-                    if(data[i, j] == true)
+                    if (Data[i][j] == true)
                     {
                         oved = true;
                         hayom += "\t" + (starttime + j) + ":00-";
                         hayom += (starttime + j + 1).ToString() + ":00\n";
-                    }  
+                    }
                 }
-                if (oved==true)
+                if (oved == true)
                 {
                     result += ((Day)i).ToString() + "\n";
                     result += hayom;
                 }
             }
-            return result.Substring(0,result.Length-1);
+            return result.Substring(0, result.Length - 1);
         }
     }
 }

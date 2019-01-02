@@ -32,14 +32,17 @@ namespace DS
                 Expertise = CarType.Truck_Heavy,
                 MaxDistance = 2,
                 MaxTestWeekly = 1,
-                Luz  = new Schedule (new bool[5, 6]
+                Luz  = new Schedule
+                {
+                    Data = new bool[5][]
                      {
-                        { false, false, true, false, false, false},
-                        { false, false, false, false, false, false},
-                        { false, false, false, false, false, false},
-                        { false, false, true, false, false, false},
-                        { false, false, false, false, false, false}
-                      })
+                      new bool[6] { false, false, true, false, false, false},
+                      new bool[6] { false, false, false, false, false, false},
+                      new bool[6] { false, false, false, false, false, false},
+                      new bool[6] { false, false, true, false, false, false},
+                      new bool[6] { false, false, false, false, false, false}
+                      }
+                }
             });
 
             TraineesList.Add(new Trainee

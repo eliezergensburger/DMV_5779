@@ -155,7 +155,14 @@ namespace DAL
 
         public static Schedule Clone(this Schedule s)
         {
-            Schedule result = new Schedule((bool[,])s.data.Clone());
+            Schedule result = new Schedule();
+            for (int i = 0; i < s.Data.Length; i++)
+            {
+                if (result.Data[i].Count() > 0)
+                {
+                    result.Data[i] = s.Data[i].ToArray();
+                }
+            }
             return result;
         }
 
