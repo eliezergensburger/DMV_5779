@@ -31,7 +31,7 @@ namespace PL_WpfApp
           
         }
 
-        private void Tatte_Click(object sender, RoutedEventArgs e)
+        private void ShowPersons_Click(object sender, RoutedEventArgs e)
         {
              datagrid.ItemsSource = new ObservableCollection<Person>(myBl.GetAllPersons());
         }
