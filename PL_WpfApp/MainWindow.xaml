@@ -9,5 +9,6 @@
     <Grid>
         <Button x:Name="Tatte" Content="מי יודע" HorizontalAlignment="Left" Margin="83,73,0,0" VerticalAlignment="Top" Width="144" Height="111" Click="ShowPersons_Click"/>
         <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="362" Margin="273,27,0,0" VerticalAlignment="Top" Width="470" />
+        <Button x:Name="addTraineeBtn" Content="add טרייני" HorizontalAlignment="Left" Margin="83,290,0,0" VerticalAlignment="Top" Width="96" Height="48" Click="addTraineeBtn_Click"/>
     </Grid>
 </Window>

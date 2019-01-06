@@ -1,2 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Trainees />
+<Trainees>
+  <Trainee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ID>123</ID>
+    <Name>
+      <FirstName>Moishee</FirstName>
+      <LastName>Rappaport</LastName>
+    </Name>
+    <DayOfBirth>1988-01-01T00:00:00</DayOfBirth>
+    <Gender>MALE</Gender>
+    <Address>
+      <StreetName>Mevo Yotam</StreetName>
+      <Number>21</Number>
+      <City>Jerusalem</City>
+    </Address>
+    <CarTrained>Private</CarTrained>
+    <GearType>Automatic</GearType>
+    <DrivingSchool>YoniDriving</DrivingSchool>
+    <Instructor>
+      <FirstName>Yehonathan</FirstName>
+      <LastName>Laybel</LastName>
+    </Instructor>
+    <LessonsNb>34</LessonsNb>
+  </Trainee>
+</Trainees>

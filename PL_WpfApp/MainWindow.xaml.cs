@@ -35,5 +35,11 @@ namespace PL_WpfApp
         {
              datagrid.ItemsSource = new ObservableCollection<Person>(myBl.GetAllPersons());
         }
+
+        private void addTraineeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddTrainee wnd = new AddTrainee();
+            wnd.ShowDialog();
+        }
     }
 }

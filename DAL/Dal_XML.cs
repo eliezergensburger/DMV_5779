@@ -94,21 +94,41 @@ namespace DAL
 
         public List<Trainee> GetTrainees(Func<Trainee, bool> p)
         {
+            var stam = DS.DataSourceXML.Trainees.Elements().ToList();
             var result = from t in DS.DataSourceXML.Trainees.Elements()
                          select new Trainee
                          {
                              ID = t.Element("ID").Value,
                              Name = new Name
                              {
-                                 FirstName = t.Element("Name").Element("FirtsName").Value,
+                                 FirstName = t.Element("Name").Element("FirstName").Value,
                                  LastName = t.Element("Name").Element("LastName").Value
-                             }
-                             //.....
-
+                             },
+                             Address = new Address
+                             {
+                                 City = t.Element("Address").Element("City").Value,
+                                 Number = Int32.Parse(t.Element("Address").Element("Number").Value),
+                                 StreetName = t.Element("Address").Element("StreetName").Value
+                             },
+                             Instructor = new Name
+                             {
+                                 FirstName = t.Element("Instructor").Element("FirstName").Value,
+                                 LastName = t.Element("Instructor").Element("LastName").Value
+                             },
+                             CarTrained = (CarType)Enum.Parse(typeof(CarType), t.Element("CarTrained").Value),
+                             DayOfBirth = DateTime.Parse(t.Element("DayOfBirth").Value),
+                             DrivingSchool = t.Element("DrivingSchool").Value,
+                             LessonsNb = Int32.Parse(t.Element("LessonsNb").Value),
+                             GearType = (GearType)Enum.Parse(typeof(GearType), t.Element("GearType").Value),
+                             Gender = (Gender)Enum.Parse(typeof(Gender), t.Element("Gender").Value)
                          };
-            return (from tr in result
-                    where p(tr)
-                    select tr).ToList();
+            if (p != null)
+            {
+                return (from tr in result
+                        where p(tr)
+                        select tr).ToList();
+            }
+            return result.ToList();
         }
 
         public bool RemoveDrivingTest(DrivingTest drivingTest)
