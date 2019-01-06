@@ -94,7 +94,6 @@ namespace DAL
 
         public List<Trainee> GetTrainees(Func<Trainee, bool> p)
         {
-            var stam = DS.DataSourceXML.Trainees.Elements().ToList();
             var result = from t in DS.DataSourceXML.Trainees.Elements()
                          select new Trainee
                          {
