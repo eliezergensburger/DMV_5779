@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="DayHours.cs" />
     <Compile Include="DrivingTest.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Name.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Schedule.cs" />
     <Compile Include="Tester.cs" />
     <Compile Include="Trainee.cs" />
+    <Compile Include="WeeklySchedule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\whatchamacallit\ToolsExtentions.csproj">

@@ -41,5 +41,11 @@ namespace PL_WpfApp
             AddTrainee wnd = new AddTrainee();
             wnd.ShowDialog();
         }
+
+        private void AddTesterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new AddTester().Show();
+
+        }
     }
 }
