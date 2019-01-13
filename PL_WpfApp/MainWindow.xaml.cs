@@ -47,5 +47,11 @@ namespace PL_WpfApp
             new AddTester().Show();
 
         }
+
+        private void YourAreSoLate_Click(object sender, RoutedEventArgs e)
+        {
+            //new Yabadabadu().Show();
+            new Distance().Show();
+        }
     }
 }

@@ -11,5 +11,6 @@
         <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="362" Margin="273,27,0,0" VerticalAlignment="Top" Width="470" />
         <Button x:Name="addTraineeBtn" Content="add טרייני" HorizontalAlignment="Left" Margin="83,226,0,0" VerticalAlignment="Top" Width="96" Height="48" Click="addTraineeBtn_Click"/>
         <Button  x:Name="addTesterBtn" Content="הוסף בוחן" HorizontalAlignment="Left" Margin="83,305,0,0" VerticalAlignment="Top" Width="96" Height="37" Click="AddTesterBtn_Click"/>
+        <Button x:Name="YourAreSoLate" Content="Go to H ell" HorizontalAlignment="Left" Margin="69,27,0,0" VerticalAlignment="Top" Width="75" Click="YourAreSoLate_Click"/>
     </Grid>
 </Window>

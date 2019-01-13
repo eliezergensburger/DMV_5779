@@ -1,0 +1,83 @@
+﻿<Window x:Class="PL_WpfApp.Yabadabadu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL_WpfApp"
+        mc:Ignorable="d"
+        Title="Yabadabadu" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="331*"/>
+            <RowDefinition Height="88*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="AddShecduleBtn" Content="addSchedule" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Width="75" Click="AddSchedule"/>
+        <!--
+        <Grid x:Name="boolgrid" HorizontalAlignment="Left" Height="278" Margin="45,31,0,0" VerticalAlignment="Top" Width="677">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="c00"   HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <CheckBox x:Name="c01"   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <CheckBox x:Name="c02"   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <CheckBox x:Name="c03"   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+            <CheckBox x:Name="c04"   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+            <CheckBox x:Name="c05"   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+
+            <CheckBox x:Name="c10"   Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <CheckBox x:Name="c11"   Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <CheckBox x:Name="c12"   Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <CheckBox x:Name="c13"   Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+            <CheckBox x:Name="c14"   Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+            <CheckBox x:Name="c15"   Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+
+            <CheckBox x:Name="c20"   Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <CheckBox x:Name="c21"   Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <CheckBox x:Name="c22"   Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <CheckBox x:Name="c23"   Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+            <CheckBox x:Name="c24"   Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+            <CheckBox x:Name="c25"   Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+
+            <CheckBox x:Name="c30"   Grid.Row="3" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <CheckBox x:Name="c31"   Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <CheckBox x:Name="c32"   Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <CheckBox x:Name="c33"   Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+            <CheckBox x:Name="c34"   Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+            <CheckBox x:Name="c35"   Grid.Row="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+
+            <CheckBox x:Name="c40"   Grid.Row="4" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+            <CheckBox x:Name="c41"   Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+            <CheckBox x:Name="c42"   Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <CheckBox x:Name="c43"   Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3"/>
+            <CheckBox x:Name="c44"   Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4"/>
+            <CheckBox x:Name="c45"   Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5"/>
+        </Grid>
+        -->
+        <DataGrid  x:Name="datagrid" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}">
+                 
+                </DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+</Window>
