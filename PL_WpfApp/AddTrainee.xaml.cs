@@ -36,7 +36,10 @@ namespace PL_WpfApp
             try
             {
                 IBL mybl = BL.FactorySingletonBL.getInstance();
-                mybl.AddTrainee(mytrainee);
+               if( mybl.AddTrainee(mytrainee) == true)
+                {
+                    MessageBox.Show(mytrainee.ToString());
+                }
 
             }
             catch (Exception ex)

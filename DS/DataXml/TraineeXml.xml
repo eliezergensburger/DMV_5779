@@ -22,4 +22,26 @@
     </Instructor>
     <LessonsNb>34</LessonsNb>
   </Trainee>
+  <Trainee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ID>7788</ID>
+    <Name>
+      <FirstName>klum</FirstName>
+      <LastName>talmid alef alef</LastName>
+    </Name>
+    <DayOfBirth>0001-01-01T00:00:00</DayOfBirth>
+    <Gender>MALE</Gender>
+    <Address>
+      <StreetName>Herzl</StreetName>
+      <Number>3</Number>
+      <City>BB</City>
+    </Address>
+    <CarTrained>TwoWheels</CarTrained>
+    <GearType>Manual</GearType>
+    <DrivingSchool>huhukhuig</DrivingSchool>
+    <Instructor>
+      <FirstName>jojo</FirstName>
+      <LastName>jojojojo</LastName>
+    </Instructor>
+    <LessonsNb>7</LessonsNb>
+  </Trainee>
 </Trainees>
