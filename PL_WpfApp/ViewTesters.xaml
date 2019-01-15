@@ -1,0 +1,32 @@
+﻿<Window x:Class="PL_WpfApp.ViewTesters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL_WpfApp"
+        mc:Ignorable="d"
+        Title="ViewTesters" Height="300" Width="500">
+    <Grid>
+        <ListView Margin="10" Name="lvUsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Last Name" Width="120" DisplayMemberBinding="{Binding Name.LastName}" />
+                    <GridViewColumn Header="First Name" Width="120" DisplayMemberBinding="{Binding Name.FirstName}" />
+                    <GridViewColumn Header="Gender" Width="50" DisplayMemberBinding="{Binding Gender}" />
+                    <GridViewColumn Header="Day Of Birth" Width="150" DisplayMemberBinding="{Binding DayOfBirth}" />
+                </GridView>
+            </ListView.View>
+
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" FontSize="14" Text="{Binding  Name}"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+       
+    </Grid>
+</Window>
