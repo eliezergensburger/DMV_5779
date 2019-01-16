@@ -48,9 +48,6 @@ namespace PL_WpfApp
             //         };
 
             InitializeComponent();
- 
-            //refresh grid
-            //this.InvalidateVisual();
         }
 
         private void bindGrid(Grid thegrid, BE.Schedule schedule)
@@ -62,6 +59,9 @@ namespace PL_WpfApp
                 int j = Grid.GetColumn(checkbox);
                 checkbox.IsChecked = schedule.Data[i][j];
             }
+
+            //refresh grid and window
+            CommandManager.InvalidateRequerySuggested();
         }
 
         private void addSchedule_Click(object sender, RoutedEventArgs e)
