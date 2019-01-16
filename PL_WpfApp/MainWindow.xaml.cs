@@ -53,5 +53,10 @@ namespace PL_WpfApp
             //new Yabadabadu().Show();
             new Distance().Show();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            new ViewTesters().Show();
+        }
     }
 }
