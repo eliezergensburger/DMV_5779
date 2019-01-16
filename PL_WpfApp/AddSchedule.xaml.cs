@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using BE;
 
 namespace PL_WpfApp
 {
@@ -21,13 +22,13 @@ namespace PL_WpfApp
     /// </summary>
     public partial class AddSchedule : Window
     {
-        BE.Schedule m_schedule;
+        private BE.Schedule m_schedule;
         Action EmptyDelegate = delegate () { };
+
+        public Schedule Schedule { get => m_schedule; set => m_schedule = value; }
 
         public AddSchedule()
         {
-            InitializeComponent();
-
             m_schedule = new BE.Schedule();
             m_schedule.Data = new bool[5][]
                      {
@@ -38,8 +39,12 @@ namespace PL_WpfApp
                          new bool[]{ true, false, false, false, false, true}
                      };
 
+            InitializeComponent();
             bindGrid(boolgrid, m_schedule);
-            boolgrid.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
+
+            //refresh grid
+            this.InvalidateVisual();
+          //  boolgrid.Dispatcher.Invoke( EmptyDelegate, DispatcherPriority.Render);
         }
 
         private void bindGrid(Grid thegrid, BE.Schedule schedule)
