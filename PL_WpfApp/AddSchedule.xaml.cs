@@ -25,26 +25,32 @@ namespace PL_WpfApp
         private BE.Schedule m_schedule;
         Action EmptyDelegate = delegate () { };
 
-        public Schedule Schedule { get => m_schedule; set => m_schedule = value; }
+        public Schedule Schedule
+        {
+            get => m_schedule;
+            set
+            {
+                m_schedule = value;
+                bindGrid(boolgrid, m_schedule);
+            }
+        }
 
         public AddSchedule()
         {
-            m_schedule = new BE.Schedule();
-            m_schedule.Data = new bool[5][]
-                     {
-                         new bool[]{ false, false, true, false, false, false},
-                         new bool[]{ false, false, false, false, false, false},
-                         new bool[]{ false, false, false, false, false, false},
-                         new bool[]{ false, false, true, false, false, false},
-                         new bool[]{ true, false, false, false, false, true}
-                     };
+            //m_schedule = new BE.Schedule();
+            //m_schedule.Data = new bool[5][]
+            //         {
+            //             new bool[]{ false, false, true, false, false, false},
+            //             new bool[]{ false, false, false, false, false, false},
+            //             new bool[]{ false, false, false, false, false, false},
+            //             new bool[]{ false, false, true, false, false, false},
+            //             new bool[]{ true, false, false, false, false, true}
+            //         };
 
             InitializeComponent();
-            bindGrid(boolgrid, m_schedule);
-
+ 
             //refresh grid
-            this.InvalidateVisual();
-          //  boolgrid.Dispatcher.Invoke( EmptyDelegate, DispatcherPriority.Render);
+            //this.InvalidateVisual();
         }
 
         private void bindGrid(Grid thegrid, BE.Schedule schedule)
@@ -60,16 +66,18 @@ namespace PL_WpfApp
 
         private void addSchedule_Click(object sender, RoutedEventArgs e)
         {
-            int i, j;
-            foreach (var item in this.boolgrid.Children)
+            if (m_schedule != null)
             {
-                CheckBox checkbox = item as CheckBox;
-                i = Grid.GetRow(checkbox);
-                j = Grid.GetColumn(checkbox);
-                m_schedule.Data[i][j] = (checkbox.IsChecked == true);
+                int i, j;
+                foreach (var item in this.boolgrid.Children)
+                {
+                    CheckBox checkbox = item as CheckBox;
+                    i = Grid.GetRow(checkbox);
+                    j = Grid.GetColumn(checkbox);
+                    m_schedule.Data[i][j] = (checkbox.IsChecked == true);
+                }
+                DialogResult = true;
             }
-            MessageBox.Show(m_schedule.ToString());
-            //Console.WriteLine(m_schedule);
         }
     }
 }

@@ -9,15 +9,15 @@
 
     <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="151*"/>
-            <ColumnDefinition Width="642*"/>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="519*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="41*"/>
-            <RowDefinition Height="290*"/>
-            <RowDefinition Height="89*"/>
+            <RowDefinition Height="174*"/>
+            <RowDefinition Height="206*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="Hours" Grid.Column="1" Margin="20,20,235,0" Background="Beige">
+        <Grid x:Name="Hours" Grid.Column="1" Margin="20,20,282.333,0.667" Background="Beige">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition/>
@@ -34,7 +34,7 @@
             <TextBlock Grid.Column="5" Text="14:15" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
 
-        <Grid x:Name="Days" HorizontalAlignment="Center" Height="190" Margin="75,9.333,5.333,0" VerticalAlignment="Top" Width="71" Grid.Row="1">
+        <Grid x:Name="Days" HorizontalAlignment="Center" Height="140" Margin="192,10.333,12,0" VerticalAlignment="Top" Width="70" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -48,7 +48,7 @@
             <TextBlock Grid.Row="3" Text="Wednesday" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <TextBlock Grid.Row="4" Text="Thursday" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </Grid>
-        <Grid x:Name="boolgrid" HorizontalAlignment="Center" Height="190" Margin="0,10,212,0" VerticalAlignment="Top" Width="389" Grid.Column="1" Grid.Row="1">
+        <Grid x:Name="boolgrid" HorizontalAlignment="Center" Height="138" Margin="10,11.333,292.333,0" VerticalAlignment="Top" Width="217" Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition/>
@@ -100,6 +100,6 @@
             <CheckBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <CheckBox Grid.Row="4" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-        <Button x:Name="AddShecduleBtn"  Grid.Row="2"  Content="add Schedule" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="171" Height="70" Click="addSchedule_Click" Grid.Column="1" Margin="156.667,9.667,314.333,9.667" FontWeight="Bold" FontSize="20" FontFamily="Tahoma" Background="Cyan" Foreground="Red" />
+        <Button x:Name="AddShecduleBtn"  Grid.Row="2"  Content="add Schedule" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="171" Height="70" Click="addSchedule_Click"  FontWeight="Bold" FontSize="20" FontFamily="Tahoma" Background="Cyan" Foreground="Red" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

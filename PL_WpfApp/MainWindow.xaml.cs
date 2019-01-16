@@ -44,7 +44,26 @@ namespace PL_WpfApp
 
         private void AddTesterBtn_Click(object sender, RoutedEventArgs e)
         {
-            new AddSchedule().ShowDialog();
+            AddSchedule addSchedule = new AddSchedule();
+            addSchedule.Schedule = new BE.Schedule
+            {
+                Data = new bool[5][]
+                     {
+                         new bool[]{ false, false, true, false, false, false},
+                         new bool[]{ false, false, false, false, false, false},
+                         new bool[]{ false, false, false, false, false, false},
+                         new bool[]{ false, false, true, false, false, false},
+                         new bool[]{ true, false, false, false, false, true}
+                     }
+            };
+
+            addSchedule.ShowDialog();
+
+            if (addSchedule.DialogResult.HasValue && addSchedule.DialogResult.Value == true)
+            {
+                MessageBox.Show(addSchedule.Schedule.ToString());
+            }
+
         }
 
         private void Distance_Click(object sender, RoutedEventArgs e)
