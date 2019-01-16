@@ -81,8 +81,8 @@
     <Compile Include="ViewTesters.xaml.cs">
       <DependentUpon>ViewTesters.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Yabadabadu.xaml.cs">
-      <DependentUpon>Yabadabadu.xaml</DependentUpon>
+    <Compile Include="AddSchedule.xaml.cs">
+      <DependentUpon>AddSchedule.xaml</DependentUpon>
     </Compile>
     <Page Include="AddTester.xaml">
       <SubType>Designer</SubType>
@@ -118,7 +118,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Yabadabadu.xaml">
+    <Page Include="AddSchedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

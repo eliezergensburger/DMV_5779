@@ -35,7 +35,11 @@ namespace BE
                     result += hayom;
                 }
             }
-            return result.Substring(0, result.Length - 1);
+            if (result !=null && result.Length > 1)
+            {
+                result = result.Substring(0, result.Length - 1);
+            }
+            return result;
         }
     }
 }

@@ -44,17 +44,15 @@ namespace PL_WpfApp
 
         private void AddTesterBtn_Click(object sender, RoutedEventArgs e)
         {
-            new AddTester().Show();
-
+            new AddSchedule().ShowDialog();
         }
 
-        private void YourAreSoLate_Click(object sender, RoutedEventArgs e)
+        private void Distance_Click(object sender, RoutedEventArgs e)
         {
-            //new Yabadabadu().Show();
             new Distance().Show();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void ViewTestersGroup_Click(object sender, RoutedEventArgs e)
         {
             new ViewTesters().Show();
         }

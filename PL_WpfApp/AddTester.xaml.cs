@@ -31,5 +31,9 @@ namespace PL_WpfApp
             this.luzDataGrid.ItemsSource = schedule.Data;
          }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

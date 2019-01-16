@@ -13,17 +13,22 @@
                    Height="291" Margin="338,26,0,0" VerticalAlignment="Top" >
 
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="ColumnHeader" Header="Day:  "/>
+                <DataGridTextColumn x:Name="ColumnHeader" Header="Day:  " >
+                 </DataGridTextColumn>
                 <DataGridCheckBoxColumn Header="09:00-10:00"/>
                 <DataGridCheckBoxColumn Header="10:00-11:00"/>
                 <DataGridCheckBoxColumn Header="11:00-12:00"/>
                 <DataGridCheckBoxColumn Header="12:00-13:00"/>
                 <DataGridCheckBoxColumn Header="13:00-14:00"/>
                 <DataGridCheckBoxColumn Header="14:00-15:00"/>
-                <DataGridCheckBoxColumn/>
             </DataGrid.Columns>
-           
+            <GridView x:Name="Sunday" />
+            <GridView x:Name="Monday"  />
+            <GridView x:Name="Tuesday" />
+            <GridView x:Name="Wednesday"/>
+            <GridView x:Name="Thirsday" />
         </DataGrid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="299,371,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
     </Grid>
 </Window>

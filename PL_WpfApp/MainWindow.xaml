@@ -10,8 +10,8 @@
         <Button x:Name="Tatte" Content="מי יודע" HorizontalAlignment="Left" Margin="83,73,0,0" VerticalAlignment="Top" Width="144" Height="111" Click="ShowPersons_Click"/>
         <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="362" Margin="273,27,0,0" VerticalAlignment="Top" Width="470" />
         <Button x:Name="addTraineeBtn" Content="add טרייני" HorizontalAlignment="Left" Margin="83,226,0,0" VerticalAlignment="Top" Width="96" Height="48" Click="addTraineeBtn_Click"/>
-        <Button  x:Name="addTesterBtn" Content="הוסף בוחן" HorizontalAlignment="Left" Margin="83,305,0,0" VerticalAlignment="Top" Width="96" Height="37" Click="AddTesterBtn_Click"/>
-        <Button x:Name="YourAreSoLate" Content="Go to H ell" HorizontalAlignment="Left" Margin="69,27,0,0" VerticalAlignment="Top" Width="75" Click="YourAreSoLate_Click"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="45,374,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button  x:Name="addScheduleBtn" Content="הוסף לוז" HorizontalAlignment="Left" Margin="83,305,0,0" VerticalAlignment="Top" Width="96" Height="37" Click="AddTesterBtn_Click"/>
+        <Button x:Name="YourAreSoLate" Content="Go to H ell" HorizontalAlignment="Left" Margin="69,27,0,0" VerticalAlignment="Top" Width="75" Click="Distance_Click"/>
+        <Button x:Name="testersGroupBtn" Content="ShowGrouping" HorizontalAlignment="Left" Margin="45,374,0,0" VerticalAlignment="Top" Width="75" Click="ViewTestersGroup_Click"/>
     </Grid>
 </Window>
