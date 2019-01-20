@@ -44,6 +44,7 @@ namespace PL_WpfApp
 
         private void AddTesterBtn_Click(object sender, RoutedEventArgs e)
         {
+            Tester tester = new Tester();
             AddSchedule addSchedule = new AddSchedule();
             addSchedule.Schedule = new BE.Schedule
             {
@@ -62,6 +63,8 @@ namespace PL_WpfApp
             if (addSchedule.DialogResult.HasValue && addSchedule.DialogResult.Value == true)
             {
                 MessageBox.Show(addSchedule.Schedule.ToString());
+                tester.Luz = addSchedule.Schedule;
+                BL.FactorySingletonBL.getInstance().AddTester(tester);
             }
 
         }
@@ -74,6 +77,11 @@ namespace PL_WpfApp
         private void ViewTestersGroup_Click(object sender, RoutedEventArgs e)
         {
             new ViewTesters().Show();
+        }
+
+        private void DrivingTestBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new DrivingTestWindow().Show();
         }
     }
 }

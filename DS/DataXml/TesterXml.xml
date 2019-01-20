@@ -9,7 +9,7 @@
     <DayOfBirth>1974-01-03T01:11:59.1927735+02:00</DayOfBirth>
     <Gender>MALE</Gender>
     <Address>
-      <StreetName>havvad haleumi</StreetName>
+      <StreetName>Herzl</StreetName>
       <Number>21</Number>
       <City>Jerusalem</City>
     </Address>
@@ -71,9 +71,9 @@
     <DayOfBirth>1979-06-03T01:11:59.1927735+02:00</DayOfBirth>
     <Gender>MALE</Gender>
     <Address>
-      <StreetName>klil hachoresh</StreetName>
+      <StreetName>Jerusalem</StreetName>
       <Number>34</Number>
-      <City>Nahariyah</City>
+      <City>Nahariyah, Israel</City>
     </Address>
     <Luz>
       <Data>
@@ -132,9 +132,9 @@
     <DayOfBirth>1974-01-03T01:11:59.1927735+02:00</DayOfBirth>
     <Gender>MALE</Gender>
     <Address>
-      <StreetName>Herzl</StreetName>
+      <StreetName>Eilat</StreetName>
       <Number>100</Number>
-      <City>Beit Shean</City>
+      <City>Tel Aviv-Yafo, Tel Aviv District NO</City>
     </Address>
     <Luz>
       <Data>
@@ -183,7 +183,7 @@
     <Expertise>Truck_Heavy</Expertise>
     <Experience>10</Experience>
     <MaxTestWeekly>1</MaxTestWeekly>
-    <MaxDistance>2</MaxDistance>
+    <MaxDistance>1000</MaxDistance>
   </Tester> <Tester xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <ID>4444</ID>
     <Name>
@@ -193,9 +193,9 @@
     <DayOfBirth>1974-01-03T01:11:59.1927735+02:00</DayOfBirth>
     <Gender>MALE</Gender>
     <Address>
-      <StreetName>lo yadua</StreetName>
+      <StreetName>Aharon Eshkoli</StreetName>
       <Number>21</Number>
-      <City>US</City>
+      <City>Jerusalem, Jerusalem NO</City>
     </Address>
     <Luz>
       <Data>
@@ -246,7 +246,4 @@
     <MaxTestWeekly>1</MaxTestWeekly>
     <MaxDistance>2</MaxDistance>
   </Tester>
-
-
-
 </Testers>

@@ -11,7 +11,7 @@
     <Address>
       <StreetName>Mevo Yotam</StreetName>
       <Number>21</Number>
-      <City>Jerusalem</City>
+      <City>Jerusalem, Jerusalem NO</City>
     </Address>
     <CarTrained>Private</CarTrained>
     <GearType>Automatic</GearType>
@@ -33,7 +33,7 @@
     <Address>
       <StreetName>Herzl</StreetName>
       <Number>3</Number>
-      <City>BB</City>
+      <City>Bnei Brak, Israel</City>
     </Address>
     <CarTrained>TwoWheels</CarTrained>
     <GearType>Manual</GearType>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using BE;
 
 namespace BL
@@ -21,7 +22,7 @@ namespace BL
         List<Tester> GetTesters();
         List<Trainee> GetTrainees();
         IEnumerable<Person> GetAllPersons();
-
+        void checkTesterDistance(Address addr1, RunWorkerCompletedEventHandler completed);
 
     }
 }

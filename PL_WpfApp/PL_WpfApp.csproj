@@ -78,6 +78,9 @@
     <Compile Include="Distance.xaml.cs">
       <DependentUpon>Distance.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DrivingTestWindow.xaml.cs">
+      <DependentUpon>DrivingTestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewTesters.xaml.cs">
       <DependentUpon>ViewTesters.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Distance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DrivingTestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
