@@ -13,6 +13,7 @@ namespace BE
     /// </summary>
     public class DrivingTest
     {
+        public int DrivingTestID { get; set; }
         private DateTime _date;
         private List<string> _requirements = new List<string>();
         //  private ArrayList _requirements = new ArrayList();

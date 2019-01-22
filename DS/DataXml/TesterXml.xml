@@ -60,7 +60,7 @@
     <Expertise>Truck_Heavy</Expertise>
     <Experience>10</Experience>
     <MaxTestWeekly>1</MaxTestWeekly>
-    <MaxDistance>2</MaxDistance>
+    <MaxDistance>20</MaxDistance>
   </Tester>
    <Tester xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <ID>2222</ID>
@@ -122,7 +122,7 @@
     <Expertise>Truck_Medium</Expertise>
     <Experience>10</Experience>
     <MaxTestWeekly>1</MaxTestWeekly>
-    <MaxDistance>2</MaxDistance>
+    <MaxDistance>100</MaxDistance>
   </Tester> <Tester xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <ID>3333</ID>
     <Name>
