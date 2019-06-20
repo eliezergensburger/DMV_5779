@@ -108,7 +108,11 @@ namespace DAL
 
         public bool RemoveDrivingTest(DrivingTest drivingTest)
         {
-            throw new NotImplementedException();
+             DrivingTest killit = (from d in DS.DataSource.DrivingtestsList
+                                   where (d.DrivingTestID==drivingTest.DrivingTestID)
+                                   select d).FirstOrDefault();
+
+            return DS.DataSource.DrivingtestsList.Remove(killit);
         }
 
         public bool RemoveTester(Tester tester)
@@ -123,7 +127,17 @@ namespace DAL
 
         public bool UpdateDrivingTest(DrivingTest drivingTest)
         {
-            throw new NotImplementedException();
+            var x = (from d in DS.DataSource.DrivingtestsList
+                     where (d.DrivingTestID == drivingTest.DrivingTestID)
+                     select d).FirstOrDefault();
+
+            //x.Tester_ID = drivingTest.Tester_ID;
+            //x.StartingPoint = drivingTest.StartingPoint;
+
+            DS.DataSource.DrivingtestsList.Remove(x);
+            DS.DataSource.DrivingtestsList.Add(drivingTest.Clone());
+
+           return true;
         }
 
         public bool UpdateTester(Tester tester)

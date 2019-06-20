@@ -11,7 +11,9 @@ namespace BE
         public bool[][] Data { get; set; }// = new bool[5][];
         public override string ToString()
         {
+           // sarting working hour of the day
             int starttime = 9;
+            //flag designing if the driver work in this day
             bool oved = false;
             string result = null;
             string hayom = null;
@@ -20,6 +22,7 @@ namespace BE
                 oved = false;
                 hayom = null;
                 //result += ((Day)i).ToString() + "\n";
+                //working only 6 hours a day
                 for (int j = 0; j < 6; j++)
                 {
                     if (Data[i][j] == true)

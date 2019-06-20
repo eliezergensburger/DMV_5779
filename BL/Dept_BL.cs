@@ -14,6 +14,7 @@ namespace BL
     internal class Dept_BL : IBL
     {
         private static DAL.Idal instance = DAL.FactorySingletonDal.getInstance();
+        //MapQuest API KEY requested for using it
         String API_KEY = @"pcNsEXrtoCyYnfAQFBGTTHCx1cUDnMT3";
 
         public bool AddTester(Tester tester)
