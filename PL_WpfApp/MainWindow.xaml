@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:PL_WpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush>
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="images/background1.jpg"/>
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
     <Grid>
         <Button x:Name="Tatte" Content="מי יודע" HorizontalAlignment="Left" Margin="83,73,0,0" VerticalAlignment="Top" Width="96" Height="40" Click="ShowPersons_Click"/>
         <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="362" Margin="273,27,0,0" VerticalAlignment="Top" Width="470" />
